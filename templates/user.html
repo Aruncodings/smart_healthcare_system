@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile - Health & Wellness Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-bar {
+            background-color: #2b2b2b;
+            padding: 15px 0;
+            text-align: center;
+            color: #f8f9fa;
+        }
+        .main-container {
+            flex-grow: 1;
+            padding: 40px 0;
+        }
+        .user-info, .user-edit {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .user-info h3, .user-edit h3 {
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .user-info p, .user-edit p {
+            color: #dcdcdc;
+        }
+        .footer {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        .btn-custom {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #f8f9fa;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <h2>User Profile</h2>
+    </div>
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="user-info">
+                    <h3>User Information</h3>
+                    <p><strong>Name:</strong> {{ user[1] }}</p>
+                    <p><strong>Email:</strong> {{ user[5] }}</p>
+                    <p><strong>Age:</strong> {{ user[2] }}</p>
+                    <p><strong>Height:</strong> {{ user[3] }} cm</p>
+                    <p><strong>Weight:</strong> {{ user[4] }} kg</p>
+                    <p><strong>Date of Birth:</strong> {{ user[7] }}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="user-edit">
+                    <h3>Edit User Details</h3>
+                    <form action="{{ url_for('update_user') }}" method="post">
+                        <div class="mb-3">
+                            <label for="height" class="form-label">Height (cm)</label>
+                            <input type="number" class="form-control" id="height" name="height" value="{{ user[3] }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number" class="form-control" id="weight" name="weight" value="{{ user[4] }}" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-custom">Back to Dashboard</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>Contact Us: example@email.com | Phone: +1234567890</p>
+            <p>Smart Healthcare © 2023</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

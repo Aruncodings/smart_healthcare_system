@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nutrition Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .header-bar {
+            background-color: #2b2b2b;
+            padding: 10px 0;
+            text-align: center;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .main-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px auto;
+            width: 75%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            color: #f8f9fa;
+            text-align: left;
+        }
+        .section-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section-box h3 {
+            color: #f8f9fa;
+        }
+        .section-box p {
+            color: #dcdcdc;
+        }
+        .footer {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            font-size: 14px;
+            margin-top: auto;
+        }
+        .btn-outline-success {
+            color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+        .btn-outline-success:hover {
+            color: #2575fc;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: #f8f9fa !important;
+        }
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #dcdcdc !important;
+        }
+        .navbar-nav .nav-item.active .nav-link {
+            color: #2575fc !important;
+            font-weight: bold;
+        }
+        .navbar-toggler-icon {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <p>Nutrition Recommendation</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Health Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('nutrition') }}">Nutrition Recommendation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('mental_health') }}">Mental Health Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('medicine_suggestion') }}">Medicine Suggestion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('users') }}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('diet') }}">Diet Planning</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-container">
+        <h1 class="mb-4">Personalized Nutrition Recommendation</h1>
+        <p>Get personalized nutrition recommendations based on your dietary preferences and health goals.</p>
+
+        <div class="section-box">
+            <h3>Step 1: Provide Your Information</h3>
+            <p>Fill out the form below with your dietary preferences, health conditions, and goals.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dietary_preferences" class="form-label">Dietary Preferences</label>
+                    <input type="text" class="form-control" id="dietary_preferences" required>
+                </div>
+                <div class="mb-3">
+                    <label for="health_conditions" class="form-label">Health Conditions</label>
+                    <input type="text" class="form-control" id="health_conditions" required>
+                </div>
+                <div class="mb-3">
+                    <label for="goals" class="form-label">Health Goals</label>
+                    <input type="text" class="form-control" id="goals" required>
+                </div>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Contact Us: example@email.com | Phone: +1234567890</p>
+            <p>Smart Healthcare</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
