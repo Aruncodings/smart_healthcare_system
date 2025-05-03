@@ -10,7 +10,6 @@ A comprehensive **Smart Healthcare System** designed to streamline patient manag
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -84,9 +83,6 @@ flask run  # For Flask
 python manage.py runserver  # For Django
 ```
 
-## 📸 Screenshots
-
-> *Include relevant screenshots of the application here.*
 
 ## 🤝 Contributing
 
@@ -105,6 +101,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📬 Contact
 
 **Arun**  
-*Aspiring Web Developer*  
-📧 Email: [your.email@example.com](mailto:your.email@example.com)  
-🔗 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+📧 Email: [arunkumaraiandds@gmail.com](mailto:arunkumaraiandds@gmail.com)  
+🔗 LinkedIn: [[linkedin.com/in/arunkumar-mahendiran](https://linkedin.com/in/arunkumar-mahendiran)
